@@ -26,4 +26,9 @@ dependencies {
 
 test {
     useJUnitPlatform()
+    outputs.dir file("${buildDir}/karate-reports")
+}
+
+tasks.withType(Test) {
+    systemProperty 'karate.output.dir', "${projectDir}/karate-reports"
 }
