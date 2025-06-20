@@ -13,6 +13,9 @@ Feature: Pruebas automatizadas para la API Marvel Characters -balava
     Then status 200
     And match response == '#[]'
 
+  # Debido a que el api es de acceso publico y los datos que se consultan son volatiles he decido trabajar todos los escenarios
+  # con el personaje marvel creado con un número randomico más la fecha actual
+  # para evitar cruzarme datos con otro compañero y que el api siempre funcione.
   @crearNuevoPersonajeMarvel
   Scenario: T-API-BMO-9877- Crear un nuevo personaje de marvel
     * header content-type = 'application/json'
